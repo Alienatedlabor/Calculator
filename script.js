@@ -32,10 +32,7 @@ const divide = function (array) {
 //function operate: takes 2 numbers and an operator and calls one of the above functions:
 const operate = function (number1, number2, operator) {
   //addition
-
   //subtraction
-
   //multiplication
-
   //division
 };
