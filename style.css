@@ -45,7 +45,7 @@ h1 {
   "middle middle middle midmidright"
   "middle middle middle lowmidright"
   "middle middle middle lowermidright"
-  "middle middle middle bottomright";
+  "leftbottom middlebottom bottomright bottomright";
 }
 .operator{
   background-color:#254d6e;
@@ -93,8 +93,11 @@ h1 {
 .number1{
   grid-area: middle;
 }
+.numberdot{
+  grid-area: leftbottom;
+}
 .number0{
-  grid-area: middle;
+  grid-area: middlebottom;
 }
 .plus{
   grid-area: topmidright;
