@@ -39,17 +39,16 @@ h1 {
   margin: 25px 25px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-template-areas: 
-  "topleft topleft topright topright"
-  "middle middle middle right"
-  "middle middle middle right"
-  "middle middle middle right"
-  "middle middle middle right";
+  "topleft topleft topright topmidright"
+  "middle middle middle midmidright"
+  "middle middle middle lowmidright"
+  "middle middle middle lowermidright"
+  "middle middle middle bottomright";
 }
 .operator{
   background-color:#254d6e;
-  grid-area: right;
 }
 .clear{
   background-color: #d1c02a;
@@ -59,7 +58,7 @@ h1 {
 }
 .equals{
   background-color: #8bb5ae;
-  grid-area: right;
+  grid-area: bottomright;
 }
 .topleft{
   grid-area: topleft;
@@ -98,5 +97,14 @@ h1 {
   grid-area: middle;
 }
 .plus{
-  grid-area: right;
+  grid-area: topmidright;
+}
+.minus{
+grid-area: midmidright;
+}
+.division{
+  grid-area: lowmidright;
+}
+.times{
+  grid-area: lowermidright;
 }
