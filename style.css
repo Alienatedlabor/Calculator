@@ -20,6 +20,8 @@ h1 {
   width: 600px;
   height: 800px;
   border: solid black;
+  margin: 25px auto;
+  background-color: gray;
 }
 .display {
   width: 550px;
@@ -28,10 +30,73 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: 25px 25px;
+  background-color: azure;
 }
 .button-container {
   width: 550px;
   height: 600px;
   border: solid black;
   margin: 25px 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: 
+  "topleft topleft topright topright"
+  "middle middle middle right"
+  "middle middle middle right"
+  "middle middle middle right"
+  "middle middle middle right";
+}
+.operator{
+  background-color:#254d6e;
+  grid-area: right;
+}
+.clear{
+  background-color: #d1c02a;
+}
+.delete{
+  background-color: #a62b16;
+}
+.equals{
+  background-color: #8bb5ae;
+  grid-area: right;
+}
+.topleft{
+  grid-area: topleft;
+}
+.topright{
+  grid-area: topright;
+}
+.number9{
+  grid-area: middle;
+}
+.number8{
+  grid-area: middle;
+}
+.number7{
+  grid-area: middle;
+}
+.number6{
+  grid-area: middle;
+}
+.number5{
+  grid-area: middle;
+}
+.number4{
+  grid-area: middle;
+}
+.number3{
+  grid-area: middle;
+}
+.number2{
+  grid-area: middle;
+}
+.number1{
+  grid-area: middle;
+}
+.number0{
+  grid-area: middle;
+}
+.plus{
+  grid-area: right;
 }
