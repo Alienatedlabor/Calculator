@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Press+Start+2P&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Jura', sans-serif;
+  font-weight: 700;
 }
 .container {
   display: flex;
@@ -32,6 +35,22 @@ h1 {
   align-items: center;
   margin: 25px 25px;
   background-color: azure;
+  font-family: 'Press Start 2P', cursive;
+}
+.previous{
+  font-family: 'Press Start 2P', cursive;
+  color: #354230;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3px;
+}
+.current{
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 1rem;
+  color: #253529;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30px;
 }
 .button-container {
   width: 550px;
@@ -86,4 +105,9 @@ grid-area: midmidright;
 }
 button{
   border: 1px solid;
+  font-size: 20px;
+  transition: .2s;
+}
+button:hover{
+  opacity: 75%;
 }
