@@ -1,5 +1,6 @@
 //selectors
 let previousExpression = document.querySelector(".previousNumber");
+console.log(previousExpression);
 let currentExpression = document.querySelector(".currentNumber");
 //event listeners
 let buttonValue = "";
@@ -8,13 +9,22 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     buttonValue = button.id;
     console.log(buttonValue);
+    updateDisplay(buttonValue);
   });
 });
 //function to update display
-function updateDisplay(){
+function updateDisplay(buttonValue){
+  currentExpression.append(buttonValue);
 };
-//function to clear display
-function clear(){};
+//function to clear display 
+//doesn't do what I want it to
+function clear(){
+const clear =  document.querySelector(".clear");
+clear.addEventListener("click", () => {
+  buttonValue = 0;
+  updateDisplay(buttonValue);
+})
+};
 //function to delete single input
 function deleteSingle(){};
 //basic math functions:
@@ -58,4 +68,4 @@ const operate = function (number1, number2, operator) {
 
 
 //calling functions: 
-updateDisplay();
+clear();

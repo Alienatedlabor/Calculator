@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Press+Start+2P&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Jura', sans-serif;
+  font-family: "Jura", sans-serif;
   font-weight: 700;
 }
 .container {
@@ -28,6 +28,7 @@ h1 {
   border-radius: 6px;
 }
 .display {
+  font-family: "Press Start 2P", cursive;
   width: 550px;
   height: 100px;
   border: solid black;
@@ -35,17 +36,16 @@ h1 {
   align-items: center;
   margin: 25px 25px;
   background-color: azure;
-  font-family: 'Press Start 2P', cursive;
 }
-.previous{
-  font-family: 'Press Start 2P', cursive;
+.previousNumber {
+  font-family: "Press Start 2P", cursive;
   color: #354230;
   display: flex;
   justify-content: flex-end;
   margin-top: 3px;
 }
-.current{
-  font-family: 'Press Start 2P', cursive;
+.currentNumber {
+  font-family: "Press Start 2P", cursive;
   margin-top: 1rem;
   color: #253529;
   display: flex;
@@ -59,58 +59,59 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 
-  "topleft topleft topright topmidright"
-  "middle middle middle midmidright"
-  "middle middle middle lowmidright"
-  "middle middle middle lowermidright"
-  "leftbottom middlebottom bottomright bottomright";
+  grid-template-areas:
+    "topleft topleft topright topmidright"
+    "middle middle middle midmidright"
+    "middle middle middle lowmidright"
+    "middle middle middle lowermidright"
+    "leftbottom middlebottom bottomright bottomright";
 }
-.operator{
-  background-color:#254d6e;
-  color:white;
+.operator {
+  background-color: #254d6e;
+  color: white;
   border: solid 1px black;
 }
-.clear{
+.clear {
   background-color: #d1c02a;
 }
-.delete{
+.delete {
   background-color: #a62b16;
 }
-.equals{
+.equals {
   background-color: #8bb5ae;
   grid-area: bottomright;
-  color:black;
+  color: black;
+  font-size: 32px;
 }
-.topleft{
+.topleft {
   grid-area: topleft;
 }
-.topright{
+.topright {
   grid-area: topright;
 }
-.numberdot{
+.numberdot {
   grid-area: leftbottom;
 }
-.number0{
+.number0 {
   grid-area: middlebottom;
 }
-.plus{
+.plus {
   grid-area: topmidright;
 }
-.minus{
-grid-area: midmidright;
+.minus {
+  grid-area: midmidright;
 }
-.division{
+.division {
   grid-area: lowmidright;
 }
-.times{
+.times {
   grid-area: lowermidright;
 }
-button{
+button {
   border: 1px solid;
   font-size: 20px;
-  transition: .2s;
+  transition: 0.2s;
 }
-button:hover{
+button:hover {
   opacity: 75%;
 }
