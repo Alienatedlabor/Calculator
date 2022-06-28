@@ -68,6 +68,8 @@ h1 {
 }
 .operator{
   background-color:#254d6e;
+  color:white;
+  border: solid 1px black;
 }
 .clear{
   background-color: #d1c02a;
@@ -78,6 +80,7 @@ h1 {
 .equals{
   background-color: #8bb5ae;
   grid-area: bottomright;
+  color:black;
 }
 .topleft{
   grid-area: topleft;

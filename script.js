@@ -1,3 +1,22 @@
+//selectors
+let previousExpression = document.querySelector(".previousNumber");
+let currentExpression = document.querySelector(".currentNumber");
+//event listeners
+let buttonValue = "";
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttonValue = button.id;
+    console.log(buttonValue);
+  });
+});
+//function to update display
+function updateDisplay(){
+};
+//function to clear display
+function clear(){};
+//function to delete single input
+function deleteSingle(){};
 //basic math functions:
 
 const add = function (a, b) {
@@ -29,10 +48,14 @@ const divide = function (array) {
   return array.reduce((total, current) => total / current);
 }; //not sure if this works
 
-//function operate: takes 2 numbers and an operator and calls one of the above functions:
+//function operate: takes 2 numbers and an operator and calls one of the above math functions:
 const operate = function (number1, number2, operator) {
   //addition
   //subtraction
   //multiplication
   //division
 };
+
+
+//calling functions: 
+updateDisplay();
