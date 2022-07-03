@@ -21,15 +21,14 @@ function updateDisplay(buttonValue) {
   currentExpression.append(buttonValue);
 }
 //function to clear display
+const CLEAR = document.querySelector(".clear");
+CLEAR.addEventListener("click", clear) 
 //doesn't do what I want it to
 function clear() {
-  const CLEAR = document.querySelector(".clear");
-  CLEAR.addEventListener("click", () => {
     currentExpression.innerText = "";
     currentExpression.innerText = "0";
     previousExpression.innerText = "previous expression shows here";
-  });
-}
+  };
 //function to delete single input - slice isn't a function/doesn't work
 
 // const DELETE = document.querySelector(".delete");
@@ -78,4 +77,4 @@ const operate = function (number1, number2, operator) {
 };
 
 //calling functions:
-clear();
+
