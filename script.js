@@ -2,7 +2,6 @@
 let previousExpression = document.querySelector(".previousNumber");
 previousExpression.innerText = "previous expression shows here";
 let currentExpression = document.querySelector(".currentNumber");
-// want 0 to be default, and clear upon button press
 currentExpression.innerText = 0;
 //event listeners
 let buttonValue = "";
@@ -30,12 +29,12 @@ function clear() {
   currentExpression.innerText = "0";
   previousExpression.innerText = "previous expression shows here";
 }
-//function to delete single input - slice isn't a function/doesn't work
+//function to delete single input
 const DELETE = document.querySelector(".delete");
 DELETE.buttonValue = "";
 DELETE.addEventListener("click", deleteSingle);
 function deleteSingle() {
-  currentExpression.innerText = currentExpression.innerText.slice(0, -7);
+  currentExpression.innerText = currentExpression.innerText.slice(0, -1);
   if (currentExpression.innerText == "") {
     currentExpression.innerText = "0";
   }
