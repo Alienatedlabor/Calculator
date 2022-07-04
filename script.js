@@ -17,9 +17,9 @@ buttons.forEach((button) => {
 });
 //function to update display
 function updateDisplay(buttonValue) {
-  console.log(typeof(currentExpression.innerText));
-  let replaced = currentExpression.innerText = currentExpression.innerText.replace(/^0+/, ``);
-  console.log(replaced);
+  console.log(typeof currentExpression.innerText);
+  // replace regex gets rid of leading 0 while still allowing 0's in the currentExpression
+  currentExpression.innerText = currentExpression.innerText.replace(/^0+/, ``);
   currentExpression.append(buttonValue);
 }
 //function to clear display
@@ -31,13 +31,15 @@ function clear() {
   previousExpression.innerText = "previous expression shows here";
 }
 //function to delete single input - slice isn't a function/doesn't work
-
-// const DELETE = document.querySelector(".delete");
-// DELETE.addEventListener("click", deleteSingle())
-// function deleteSingle() {
-//  let deleted = currentExpression.innerText.slice(0, -1)
-//  return deleted;
-// }
+const DELETE = document.querySelector(".delete");
+DELETE.buttonValue = "";
+DELETE.addEventListener("click", deleteSingle);
+function deleteSingle() {
+  currentExpression.innerText = currentExpression.innerText.slice(0, -7);
+  if (currentExpression.innerText == "") {
+    currentExpression.innerText = "0";
+  }
+}
 //basic math functions:
 
 const add = function (a, b) {
