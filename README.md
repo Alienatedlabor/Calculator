@@ -1,6 +1,8 @@
 # Calculator
 
-a web-app calculator built with vanilla javascript for the Odin Project.
+https://alienatedlabor.github.io/Calculator/
+
+A web-app calculator built with vanilla javascript for the Odin Project.
 
 <strong> Technologies: </strong>
 
