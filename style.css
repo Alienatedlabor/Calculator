@@ -46,11 +46,12 @@ h1 {
 }
 .currentNumber {
   font-family: "Press Start 2P", cursive;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
+  margin-right: 1rem;
   color: #253529;
   display: flex;
   justify-content: flex-end;
-  font-size: 30px;
+  font-size: 40px;
 }
 .button-container {
   width: 550px;

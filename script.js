@@ -1,9 +1,14 @@
-//selectors
+//tracking values
+let trackedValue = 0;
+let previousOperator = "";
+
+//display selectors
 let previousExpression = document.querySelector(".previousNumber");
-previousExpression.innerText = "previous expression shows here";
+previousExpression.innerText = " ";
 let currentExpression = document.querySelector(".currentNumber");
 currentExpression.innerText = 0;
-//event listeners
+
+//button stuff
 let buttonValue = "";
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
@@ -14,18 +19,22 @@ buttons.forEach((button) => {
 });
 //function to update display
 function updateDisplay(buttonValue) {
-  // replace regex gets rid of leading 0 while still allowing 0's in the currentExpression               !!! pressing equals at 0 gives NaN
   currentExpression.innerText = currentExpression.innerText.replace(/^0+/, ``);
   currentExpression.append(buttonValue);
+  if (currentExpression.innerText.length >= 13 || previousExpression.innerText.length >= 29){
+    alert("too many characters for display")
+    clear();
+  }
 }
 
 //function to clear display
 const CLEAR = document.querySelector(".clear");
 CLEAR.addEventListener("click", clear);
 function clear() {
-  currentExpression.innerText = "";
+  trackedValue = 0;
+  previousOperator = "";
   currentExpression.innerText = "0";
-  previousExpression.innerText = "previous expression shows here";
+  previousExpression.innerText = "";
 }
 //function to delete single input
 const DELETE = document.querySelector(".delete");
@@ -37,60 +46,46 @@ function deleteSingle() {
     currentExpression.innerText = "0";
   }
 }
-//basic math functions:
-
-const add = function (a, b) {
-  return a + b;
-};
-
-const subtract = function (a, b) {
-  return a - b;
-};
-
-const multiply = function (array) {
-  return array.reduce((total, current) => total * current);
-};
-
-const divide = function (array) {
-  return array.reduce((total, current) => total / current);
-}; //not sure if this works
-
-const operate = function (currentExpression, previousExpression, operator) {
-  //addition
-  if (operator === "+") {
-    add(currentNumber, previousExpression);
-  }
-  //subtraction
-  if (operator === "-") {
-    subtract(currentExpression, previousExpression);
-  }
-  //multiplication
-  if (operator === "X") {
-    multiply(currentExpression, previousExpression);
-  }
-  //division
-  if (operator === "/") {
-    divide(currentExpression, previousExpression);
-  }
-};
-//need to return solution upon pressing equals button:
-//function operate: takes 2 numbers and an operator and calls one of the above math functions:
-const equals = document.querySelector(".equals");
-equals.addEventListener("click", operate);
-
-//function to return result upon equals press:
-
 //adding operators to DOM, making operator selection cause display shift currentExpression to previousExpression
 const operator = document.querySelectorAll(".operator");
 operator.forEach((operator) => {
   operator.addEventListener("click", () => {
+    //turns bottom string into number
     let parseNumber = parseFloat(currentExpression.innerText);
-    console.log(parseNumber);
-    console.log(typeof parseNumber);
-    previousExpression.innerText = parseNumber + operator.id;
+    if (previousOperator) {
+      operate(parseNumber, previousOperator);
+    } else {
+      trackedValue = parseNumber;
+    }
+    previousOperator = operator.id;
+    previousExpression.innerText = previousExpression.innerText + parseNumber + operator.id;
     currentExpression.innerText = "";
+    if (operator.id === '=') {
+      currentExpression.innerText = trackedValue;
+      currentExpression.innerText = parseFloat(currentExpression.innerText).toFixed(2);
+      
+    }
   });
 });
 
-
-//calling functions:
+const operate = function (newValue, operator) {
+  //addition
+  if (operator === "+") {
+    trackedValue += newValue;
+  }
+  //subtraction
+  if (operator === "-") {
+    trackedValue -= newValue;
+  }
+  //multiplication
+  if (operator === "X") {
+    trackedValue *= newValue;
+  }
+  //division
+  if (operator === "/") {
+    trackedValue /= newValue;
+  }
+};
+//TO DO: 
+//set string length limit so display can't overflow
+//disallow multiple operator presses - currently returns NaN so this might be enough. 
