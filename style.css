@@ -21,7 +21,7 @@ h1 {
   align-items: center;
   flex-direction: column;
   width: 600px;
-  height: 800px;
+  height: 750px;
   border: solid black;
   margin: 25px auto;
   background-color: gray;
@@ -66,6 +66,7 @@ h1 {
     "middle middle middle lowmidright"
     "middle middle middle lowermidright"
     "leftbottom middlebottom bottomright bottomright";
+  
 }
 .operator {
   background-color: #254d6e;
@@ -112,7 +113,24 @@ button {
   border: 1px solid;
   font-size: 20px;
   transition: 0.2s;
+  cursor: pointer;
 }
 button:hover {
   opacity: 75%;
 }
+footer {
+  display: flex;
+  font-size: small;
+  justify-content: center;
+  gap: 12px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  transition: .2s;
+}
+a:hover{
+  text-decoration: underline;
+  color: #254d6e;
+}
+
