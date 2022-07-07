@@ -63,10 +63,12 @@ operator.forEach((operator) => {
     if (operator.id === '=') {
       currentExpression.innerText = trackedValue;
       currentExpression.innerText = parseFloat(currentExpression.innerText).toFixed(2);
-      
     }
   });
 });
+//clear the display on press after calculation: 
+const equals = document.querySelector(".equals");
+equals.addEventListener("blur", clear);
 
 const operate = function (newValue, operator) {
   //addition
